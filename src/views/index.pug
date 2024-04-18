@@ -1,0 +1,39 @@
+//- doctype html
+//- html(lang="en")
+//-   head
+//-     meta(charset="UTF-8")
+//-     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-     title Welcome to My Classroom
+//-   body
+//-     h1 Welcome to My Classroom
+//-     img(src="/public/classroom.png", alt="Classroom Image")
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Interactive Box with Modal
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/public/style.css")
+
+  body
+    .container
+      .box(id="box")
+
+    // 모달 창
+    #myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+      .modal-dialog(role="document")
+        .modal-content
+          .modal-header
+            h5.modal-title(id="exampleModalLabel") 수업에 참여하실건가요? 
+            button.close(type="button", data-dismiss="modal", aria-label="Close")
+              span(aria-hidden="true") &times;
+          .modal-body
+            input(type="text", id="roomNameInput", class="form-control" placeholder="이름을 입력해주세요.")
+          .modal-footer
+            button.btn.btn-secondary(type="button", data-dismiss="modal" onclick="closeModal()") Close
+            button.btn.btn-primary(type="button", onclick="submitRoomName()") Submit
+
+    script(src="/public/js/script.js")
+    
